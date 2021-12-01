@@ -1,0 +1,101 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push">
+    <mat-toolbar color="primary">
+      <span routerLink="" class="pointer">Menú</span>
+      <span class="spacer"></span>
+      <button (click)="sidenav.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a routerLink="./centros-salud" (click)="sidenav.toggle()" mat-list-item>
+        <mat-icon mat-list-icon>label</mat-icon
+        ><span>Ver centros de salud</span>
+      </a>
+
+      <div *ngIf="role === 'user'">
+        <a routerLink="./mis-citas" (click)="sidenav.toggle()" mat-list-item>
+          <mat-icon mat-list-icon>label</mat-icon><span>Mis citas</span>
+        </a>
+      </div>
+
+      <div *ngIf="role === 'admin'">
+        <a
+          routerLink="./crear-centro-salud"
+          (click)="sidenav.toggle()"
+          mat-list-item
+        >
+          <mat-icon mat-list-icon>add</mat-icon
+          ><span>Crear centro de salud</span>
+        </a>
+        <a
+          routerLink="./registrar-cita-emergencia"
+          (click)="sidenav.toggle()"
+          mat-list-item
+        >
+          <mat-icon mat-list-icon>search</mat-icon
+          ><span>Registrar de cita de emergencia</span>
+        </a>
+        <a
+          routerLink="./citas-emergencia"
+          (click)="sidenav.toggle()"
+          mat-list-item
+        >
+          <mat-icon mat-list-icon>search</mat-icon
+          ><span>Ver registro de cita de emergencias</span>
+        </a>
+      </div>
+
+      <div *ngIf="role === 'doctor'">
+        <a
+          routerLink="./mis-consultorios"
+          (click)="sidenav.toggle()"
+          mat-list-item
+        >
+          <mat-icon mat-list-icon>search</mat-icon><span>Mis consultorios</span>
+        </a>
+        <a
+          routerLink="./crear-consultorio"
+          (click)="sidenav.toggle()"
+          mat-list-item
+        >
+          <mat-icon mat-list-icon>search</mat-icon
+          ><span>Crear consultorio</span>
+        </a>
+        <a routerLink="./mi-agenda" (click)="sidenav.toggle()" mat-list-item>
+          <mat-icon mat-list-icon>search</mat-icon><span>Agenda de citas</span>
+        </a>
+        <a
+          routerLink="./registrar-cita-emergencia"
+          (click)="sidenav.toggle()"
+          mat-list-item
+        >
+          <mat-icon mat-list-icon>search</mat-icon
+          ><span>Registrar de cita de emergencia</span>
+        </a>
+        <a
+          routerLink="./citas-emergencia"
+          (click)="sidenav.toggle()"
+          mat-list-item
+        >
+          <mat-icon mat-list-icon>search</mat-icon
+          ><span>Ver registro de cita de emergencias</span>
+        </a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button (click)="sidenav.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <span class="mr-2"> {{ "Melvin Diaz" }} </span>
+    <button mat-raised-button color="warn">Cerrar sesión</button>
+  </mat-toolbar>
+
+  <div class="container mt-5">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

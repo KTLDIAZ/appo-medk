@@ -2,45 +2,16 @@
   <div class="col-5 offset-4">
     <div class="card border-primary">
       <div class="card-header bg-primary text-center text-white mb-2">
-        <h1>Registrate en medk</h1>
+        <h1>Ingresa a medk</h1>
       </div>
-
       <div class="card-body">
-        <form (ngSubmit)="register()">
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              name="nombres"
-              [(ngModel)]="user.nombres"
-              placeholder="Escribe tus nombres..."
-            />
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-user"></span>
-              </div>
-            </div>
-          </div>
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              name="apellidos"
-              [(ngModel)]="user.apellidos"
-              placeholder="Escribe tus apellidos..."
-            />
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-user"></span>
-              </div>
-            </div>
-          </div>
+        <form (ngSubmit)="login()">
           <div class="input-group mb-3">
             <input
               type="email"
-              class="form-control"
               name="email"
               [(ngModel)]="user.email"
+              class="form-control"
               placeholder="Escribe tu correo..."
             />
             <div class="input-group-append">
@@ -52,10 +23,10 @@
           <div class="input-group mb-3">
             <input
               type="password"
-              class="form-control"
               name="password"
               [(ngModel)]="user.password"
-              placeholder="Escribe una contraseña segura..."
+              class="form-control"
+              placeholder="Escribe tu contraseña..."
             />
             <div class="input-group-append">
               <div class="input-group-text">
@@ -63,18 +34,20 @@
               </div>
             </div>
           </div>
-
           <button type="submit" class="btn btn-outline-primary btn-block mb-2">
-            Registrate
+            Iniciar Sesión
           </button>
         </form>
 
         <div class="form-group">
           <div class="d-flex justify-content-center">
-            <p class="mb-0">
-              ¿Ya estas registrado?
-              <a [routerLink]="['/login']">Ingresa a medk</a>
+            <p class="mb-0 text-dark">
+              ¿Aún no estas registrado?
+              <a [routerLink]="['/register']">Registrate</a>
             </p>
+          </div>
+          <div class="d-flex justify-content-center">
+            <a class="link pointer"> ¿Olvidaste tu contraseña? </a>
           </div>
         </div>
       </div>

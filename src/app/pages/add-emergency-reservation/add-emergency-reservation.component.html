@@ -1,0 +1,35 @@
+<app-card-form title="Registrar cita de emergencia">
+  <form (ngSubmit)="registerEmergency()">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        name="codigo"
+        [(ngModel)]="emergency.codigo"
+        class="form-control"
+        placeholder="Escribe el codigo de la emergencia..."
+      />
+    </div>
+    <div class="input-group mb-3">
+      <input
+        type="datetime-local"
+        name="fecha"
+        [(ngModel)]="emergency.fecha"
+        class="form-control"
+        placeholder="Escribe tu contraseña..."
+      />
+    </div>
+    <div class="input-group mb-3">
+      <textarea
+        rows="5"
+        name="observacion"
+        [(ngModel)]="emergency.observacion"
+        class="form-control"
+        placeholder="Escribe la observacion..."
+      >
+      </textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-primary btn-block mb-2">
+      Registrar
+    </button>
+  </form>
+</app-card-form>
