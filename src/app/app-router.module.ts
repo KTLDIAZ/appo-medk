@@ -28,7 +28,7 @@ const routes: Routes = [
         component: RegisterComponent,
       },
       {
-        path: 'centros-salud',
+        path: '',
         component: HealthCentersComponent,
       },
       {
@@ -68,7 +68,7 @@ const routes: Routes = [
         component: AddReservationComponent,
       },
       {
-        path: '',
+        path: ':id',
         component: OfficesComponent,
       },
     ],

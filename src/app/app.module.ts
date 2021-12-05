@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRouterModule } from './app-router.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AuthenticationModule } from './authentication/authentication.module';
@@ -15,6 +16,7 @@ import { PagesModule } from './pages/pages.module';
     AuthenticationModule,
     BrowserAnimationsModule,
     PagesModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

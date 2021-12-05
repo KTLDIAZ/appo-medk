@@ -9,14 +9,9 @@
     </mat-toolbar>
 
     <mat-nav-list>
-      <a routerLink="./centros-salud" (click)="sidenav.toggle()" mat-list-item>
-        <mat-icon mat-list-icon>label</mat-icon
-        ><span>Ver centros de salud</span>
-      </a>
-
       <div *ngIf="role === 'user'">
         <a routerLink="./mis-citas" (click)="sidenav.toggle()" mat-list-item>
-          <mat-icon mat-list-icon>label</mat-icon><span>Mis citas</span>
+          <span>Mis citas</span>
         </a>
       </div>
 
@@ -26,24 +21,28 @@
           (click)="sidenav.toggle()"
           mat-list-item
         >
-          <mat-icon mat-list-icon>add</mat-icon
-          ><span>Crear centro de salud</span>
+          <span>Crear centro de salud</span>
         </a>
         <a
           routerLink="./registrar-cita-emergencia"
           (click)="sidenav.toggle()"
           mat-list-item
         >
-          <mat-icon mat-list-icon>search</mat-icon
-          ><span>Registrar de cita de emergencia</span>
+          <span>Registrar de cita de emergencia</span>
         </a>
         <a
           routerLink="./citas-emergencia"
           (click)="sidenav.toggle()"
           mat-list-item
         >
-          <mat-icon mat-list-icon>search</mat-icon
-          ><span>Ver registro de cita de emergencias</span>
+          <span>Ver registro de cita de emergencias</span>
+        </a>
+        <a
+          routerLink="./crear-consultorio"
+          (click)="sidenav.toggle()"
+          mat-list-item
+        >
+          <span>Crear consultorio</span>
         </a>
       </div>
 
@@ -53,34 +52,11 @@
           (click)="sidenav.toggle()"
           mat-list-item
         >
-          <mat-icon mat-list-icon>search</mat-icon><span>Mis consultorios</span>
+          <span>Mis consultorios</span>
         </a>
-        <a
-          routerLink="./crear-consultorio"
-          (click)="sidenav.toggle()"
-          mat-list-item
-        >
-          <mat-icon mat-list-icon>search</mat-icon
-          ><span>Crear consultorio</span>
-        </a>
+
         <a routerLink="./mi-agenda" (click)="sidenav.toggle()" mat-list-item>
-          <mat-icon mat-list-icon>search</mat-icon><span>Agenda de citas</span>
-        </a>
-        <a
-          routerLink="./registrar-cita-emergencia"
-          (click)="sidenav.toggle()"
-          mat-list-item
-        >
-          <mat-icon mat-list-icon>search</mat-icon
-          ><span>Registrar de cita de emergencia</span>
-        </a>
-        <a
-          routerLink="./citas-emergencia"
-          (click)="sidenav.toggle()"
-          mat-list-item
-        >
-          <mat-icon mat-list-icon>search</mat-icon
-          ><span>Ver registro de cita de emergencias</span>
+          <span>Agenda de citas</span>
         </a>
       </div>
     </mat-nav-list>
