@@ -50,3 +50,52 @@ export interface Schedule {
   empieza?: number;
   finaliza?: number;
 }
+
+export interface Agenda {
+  _id: string;
+  tipo: string;
+  fecha: Date;
+  empieza: number;
+  finaliza: number;
+  idUser: IDUser;
+  idConsultorio: IDConsultorio;
+}
+
+export interface IDConsultorio {
+  idCentroSalud: IDCentroSalud;
+  indicaciones: string;
+  numeroConsultorio: number;
+}
+
+export interface IDCentroSalud {
+  ubicacion: string;
+  nombre: string;
+}
+
+export interface IDUser {
+  name: string;
+}
+
+export interface MyReservation {
+  _id: string;
+  fecha: Date;
+  empieza: number;
+  finaliza: number;
+  idDoctor: IDDoctor;
+  idConsultorio: IDConsultorio;
+}
+
+export interface IDConsultorio {
+  idCentroSalud: IDCentroSalud;
+  indicaciones: string;
+  numeroConsultorio: number;
+}
+
+export interface IDCentroSalud {
+  ubicacion: string;
+  nombre: string;
+}
+
+export interface IDDoctor {
+  name: string;
+}

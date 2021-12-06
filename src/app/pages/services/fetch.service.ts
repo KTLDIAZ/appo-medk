@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
+import { Agenda, MyReservation } from '../interfaces/pages.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -37,11 +38,13 @@ export class FetchService {
     return this.http.get<any>(`${this.baseUrl}/consultorio/porId/${id}`);
   }
 
-  getMyReservation(id: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/citas/user/${id}`);
+  getMyReservation(id: string): Observable<MyReservation[]> {
+    return this.http.get<MyReservation[]>(`${this.baseUrl}/citas/user/${id}`);
   }
 
-  getMyAgenda(id: string, date: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/citas/doctor/${id}/${date}`);
+  getMyAgenda(id: string, date: string): Observable<Agenda[]> {
+    return this.http.get<Agenda[]>(
+      `${this.baseUrl}/citas/doctor/${id}/${date}`
+    );
   }
 }

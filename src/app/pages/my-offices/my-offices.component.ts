@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Offices } from '../interfaces/pages.interface';
 import { FetchService } from '../services/fetch.service';
+import { AuthService } from '../../authentication/services/auth.service';
 
 @Component({
   selector: 'app-my-offices',
@@ -10,10 +11,13 @@ import { FetchService } from '../services/fetch.service';
 export class MyOfficesComponent implements OnInit {
   public offices: Offices[] = [];
 
-  constructor(private fetchService: FetchService) {}
+  constructor(
+    private fetchService: FetchService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
-    const id = '61ad388b70baa6fea82c37e5';
+    const id = this.authService.currentUser._id;
     this.fetchService
       .getOfficesByDoctorId(id)
       .subscribe((res) => (this.offices = res));

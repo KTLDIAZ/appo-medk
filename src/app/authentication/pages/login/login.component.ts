@@ -28,7 +28,7 @@ export class LoginComponent {
     this.authService.login(email, password).subscribe((ok) => {
       console.log(ok);
       if (ok == true) {
-        this.router.navigate(['/Home']).then(() => {
+        this.router.navigate(['/']).then(() => {
           window.location.reload();
         });
       } else {
