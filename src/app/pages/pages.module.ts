@@ -15,6 +15,7 @@ import { ComponentsModule } from '../components/components.module';
 import { FormsModule } from '@angular/forms';
 import { OfficesComponent } from './offices/offices.component';
 import { AddReservationComponent } from './add-reservation/add-reservation.component';
+import { PagesRoutingModule } from './pages-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,27 +29,16 @@ import { AddReservationComponent } from './add-reservation/add-reservation.compo
     MyAgendaComponent,
     AddOfficeComponent,
     OfficesComponent,
-    AddReservationComponent,
-  ],
-  exports: [
-    HomeComponent,
-    MyReservationsComponent,
-    HealthCentersComponent,
-    AddHealthCenterComponent,
-    AddEmergencyReservationComponent,
-    EmergencyReservationComponent,
-    MyOfficesComponent,
-    MyAgendaComponent,
-    AddOfficeComponent,
-    OfficesComponent,
-    AddReservationComponent,
+    AddReservationComponent
+    
   ],
   imports: [
     CommonModule,
+    PagesRoutingModule,
     MaterialModule,
     RouterModule,
     ComponentsModule,
-    FormsModule,
-  ],
+    FormsModule
+  ]
 })
-export class PagesModule {}
+export class PagesModule { }

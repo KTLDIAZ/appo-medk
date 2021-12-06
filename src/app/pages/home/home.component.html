@@ -9,13 +9,13 @@
     </mat-toolbar>
 
     <mat-nav-list>
-      <div *ngIf="role === 'user'">
+      <div>
         <a routerLink="./mis-citas" (click)="sidenav.toggle()" mat-list-item>
           <span>Mis citas</span>
         </a>
       </div>
-
-      <div *ngIf="role === 'admin'">
+      
+      <div *ngIf="isAdmin">
         <a
           routerLink="./crear-centro-salud"
           (click)="sidenav.toggle()"
@@ -46,7 +46,7 @@
         </a>
       </div>
 
-      <div *ngIf="role === 'doctor'">
+      <div *ngIf="isDoctor">
         <a
           routerLink="./mis-consultorios"
           (click)="sidenav.toggle()"
@@ -67,8 +67,8 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span class="spacer"></span>
-    <span class="mr-2"> {{ "Melvin Diaz" }} </span>
-    <button mat-raised-button color="warn">Cerrar sesión</button>
+    <span class="mr-2"><i class="fas fa-user"></i> {{authService.currentUser.name}} </span>
+    <button mat-raised-button color="warn" (click)="logout()">Cerrar sesión</button>
   </mat-toolbar>
 
   <div class="container mt-5">
