@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class HomeComponent implements OnInit {
-  public role: string = 'user';
+  public role: string = 'doctor';
 
   constructor() {}
 

@@ -5,14 +5,49 @@ export interface Emergency {
 }
 
 export interface HealthCenter {
+  _id?: string;
   nombre: string;
   ubicacion: string;
-  empieza?: number;
-  finaliza?: number;
+  empieza: number;
+  finaliza: number;
 }
 
 export interface Office {
-  doctor: string;
-  centroSalud: string;
-  indicacciones: string;
+  idCentroSalud: string;
+  idDoctor: string;
+  indicaciones: string;
+  numeroConsultorio: number;
+  horarios?: any[];
+}
+
+export interface Offices {
+  _id: string;
+  idCentroSalud: IDCentroSalud;
+  horarios: any[];
+  indicaciones: string;
+  numeroConsultorio: number;
+  idDoctor: IDDoctor;
+}
+
+export interface IDCentroSalud {
+  _id: string;
+  ubicacion: string;
+  empieza: number;
+  finaliza: number;
+  nombre: string;
+}
+
+export interface IDDoctor {
+  _id: string;
+  fechaCreacion: Date;
+  password: string;
+  nombres: string;
+  apellidos: string;
+  email: string;
+  role: string;
+}
+
+export interface Schedule {
+  empieza?: number;
+  finaliza?: number;
 }

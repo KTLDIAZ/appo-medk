@@ -1,1 +1,15 @@
-<p>my-agenda works!</p>
+<form class="form-inline mb-3">
+  <h1 class="mr-2">Mi agenda</h1>
+  <input
+    type="date"
+    name="date"
+    [ngModel]="date | date: 'yyyy-MM-dd'"
+    (change)="changeAgenda()"
+    (ngModelChange)="date = $event"
+    class="form-control mb-2 mr-sm-2"
+  />
+</form>
+
+<div class="row">
+  <div class="col"></div>
+</div>

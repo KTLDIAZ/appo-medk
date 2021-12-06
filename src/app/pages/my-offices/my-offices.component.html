@@ -1,8 +1,23 @@
-<form class="form-inline mb-3">
-  <h1 class="mr-2">Mi agenda</h1>
-  <input type="datetime-local" class="form-control mb-2 mr-sm-2" />
-</form>
+<h1 class="mr-2">Mis consultorios</h1>
+<hr />
 
-<div class="row">
-  <div class="col"></div>
+<div class="row text-dark">
+  <div *ngFor="let office of offices" class="col-md-4 mb-5">
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h2 class="card-title mb-0">
+          Dr. {{ office.idDoctor.nombres }} {{ office.idDoctor.apellidos }}
+        </h2>
+        <p>
+          El consultorio esta ubicado en {{ office.indicaciones }} y el numero
+          de consultorio es {{ office.numeroConsultorio }}
+        </p>
+        <a
+          class="btn btn-warning"
+          [routerLink]="['/editar-consultorio', office._id]"
+          >Editar consultorio</a
+        >
+      </div>
+    </div>
+  </div>
 </div>

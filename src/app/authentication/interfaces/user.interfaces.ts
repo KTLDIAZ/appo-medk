@@ -1,4 +1,5 @@
 export interface User {
+  _id?: string;
   nombres?: String;
   apellidos?: String;
   email: String;
