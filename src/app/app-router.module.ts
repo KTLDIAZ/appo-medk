@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './authentication/login/login.component';
-import { RegisterComponent } from './authentication/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HealthCentersComponent } from './pages/health-centers/health-centers.component';
 import { MyReservationsComponent } from './pages/my-reservations/my-reservations.component';
@@ -13,67 +11,31 @@ import { MyAgendaComponent } from './pages/my-agenda/my-agenda.component';
 import { AddOfficeComponent } from './pages/add-office/add-office.component';
 import { AddReservationComponent } from './pages/add-reservation/add-reservation.component';
 import { OfficesComponent } from './pages/offices/offices.component';
+import { ValidarTokenGuard } from './guards/validar-token.guard';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
-    children: [
-      {
-        path: 'login',
-        component: LoginComponent,
-      },
-      {
-        path: 'register',
-        component: RegisterComponent,
-      },
-      {
-        path: '',
-        component: HealthCentersComponent,
-      },
-      {
-        path: 'mis-citas',
-        component: MyReservationsComponent,
-      },
-      {
-        path: 'crear-centro-salud',
-        component: AddHealthCenterComponent,
-      },
-      {
-        path: 'registrar-cita-emergencia',
-        component: AddEmergencyReservationComponent,
-      },
-      {
-        path: 'citas-emergencia',
-        component: EmergencyReservationComponent,
-      },
-      {
-        path: 'mis-consultorios',
-        component: MyOfficesComponent,
-      },
-      {
-        path: 'crear-consultorio',
-        component: AddOfficeComponent,
-      },
-      {
-        path: 'mi-agenda',
-        component: MyAgendaComponent,
-      },
-      {
-        path: 'editar-consultorio/:id',
-        component: AddOfficeComponent,
-      },
-      {
-        path: 'consultorio/:id',
-        component: AddReservationComponent,
-      },
-      {
-        path: ':id',
-        component: OfficesComponent,
-      },
-    ],
+    path: 'authentication',
+    loadChildren: () =>
+      import('./authentication/authentication.module').then(
+        (m) => m.AuthenticationModule
+      ),
   },
-  { path: '**', redirectTo: '' },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./protected/protected.module').then((m) => m.ProtectedModule),
+    canActivate: [ValidarTokenGuard],
+    canLoad: [ValidarTokenGuard],
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./pages/pages.module').then((m) => m.PagesModule),
+    canActivate: [ValidarTokenGuard],
+    canLoad: [ValidarTokenGuard],
+  },
+  { path: '**', redirectTo: 'authentication' },
 ];
 
 @NgModule({

@@ -1,9 +1,8 @@
 export interface User {
   _id?: string;
-  nombres?: String;
-  apellidos?: String;
+  name?: String;
   email: String;
   password: String;
-  role?: String;
+  rol?: String;
   fechaCreacion?: Date;
 }

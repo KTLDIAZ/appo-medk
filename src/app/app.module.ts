@@ -4,7 +4,6 @@ import { AppRouterModule } from './app-router.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { AuthenticationModule } from './authentication/authentication.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PagesModule } from './pages/pages.module';
 
@@ -13,7 +12,6 @@ import { PagesModule } from './pages/pages.module';
   imports: [
     BrowserModule,
     AppRouterModule,
-    AuthenticationModule,
     BrowserAnimationsModule,
     PagesModule,
     HttpClientModule,

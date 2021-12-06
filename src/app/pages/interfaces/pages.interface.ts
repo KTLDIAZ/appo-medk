@@ -41,10 +41,9 @@ export interface IDDoctor {
   _id: string;
   fechaCreacion: Date;
   password: string;
-  nombres: string;
-  apellidos: string;
+  name: string;
   email: string;
-  role: string;
+  rol: string;
 }
 
 export interface Schedule {

@@ -23,4 +23,12 @@
   >
     {{ s.empieza }}:00 a {{ s.finaliza }}:00
   </button>
+
+  <button
+    *ngIf="schedules.length < 0"
+    type="button"
+    class="btn btn-primary btn-lg btn-danger"
+  >
+    Lo sentimos no hay horarios disponibles para esta fecha
+  </button>
 </div>

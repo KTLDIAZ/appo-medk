@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchService } from '../services/fetch.service';
+import { AuthService } from '../../authentication/services/auth.service';
 
 @Component({
   selector: 'app-my-reservations',
@@ -7,8 +8,13 @@ import { FetchService } from '../services/fetch.service';
   styles: [],
 })
 export class MyReservationsComponent implements OnInit {
-  public userId = '61ad82eb70e3de391f5b6f15';
-  constructor(private fetchService: FetchService) {}
+  public userId = '';
+  constructor(
+    private fetchService: FetchService,
+    private authService: AuthService
+  ) {
+    this.userId = this.authService.currentUser._id;
+  }
 
   ngOnInit(): void {
     this.fetchService

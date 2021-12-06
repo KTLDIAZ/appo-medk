@@ -2,15 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
+import { AuthService } from '../../authentication/services/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CreateService {
   private baseUrl: string = environment.baseUrl;
-  private userId: string = '61ad82eb70e3de391f5b6f15'; //user
+  private userId: string = ''; //user
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {
+    this.userId = this.authService.currentUser._id;
+  }
 
   createHealthCenter(data: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/centro`, data);

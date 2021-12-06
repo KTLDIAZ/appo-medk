@@ -32,7 +32,10 @@ export class AddReservationComponent implements OnInit {
   getSchedules() {
     this.fetchService
       .getOfficeScheduleById(this.idConsultorio, this.date.toString())
-      .subscribe((res) => (this.schedules = res));
+      .subscribe((res) => {
+        this.schedules = res.data.horarios;
+        this.idDoctor = res.data.idDoctor;
+      });
   }
 
   ngOnInit(): void {

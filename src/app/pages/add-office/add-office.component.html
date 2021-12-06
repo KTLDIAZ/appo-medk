@@ -27,7 +27,7 @@
             >
               <option value="0">Seleccione el doctor</option>
               <option *ngFor="let d of doctors" [value]="d._id">
-                {{ d.nombres }} {{ d.apellidos }}
+                {{ d.name }}
               </option>
             </select>
           </div>
