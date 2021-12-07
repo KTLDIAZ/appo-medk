@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AddHealthCenterComponent } from './add-health-center/add-health-center.component';
 import { MyReservationsComponent } from './my-reservations/my-reservations.component';
-import { AddEmergencyReservationComponent } from './add-emergency-reservation/add-emergency-reservation.component';
-import { EmergencyReservationComponent } from './emergency-reservation/emergency-reservation.component';
 import { MyOfficesComponent } from './my-offices/my-offices.component';
 import { MyAgendaComponent } from './my-agenda/my-agenda.component';
 import { AddOfficeComponent } from './add-office/add-office.component';
@@ -25,14 +23,6 @@ const routes: Routes = [
       {
         path: 'crear-centro-salud',
         component: AddHealthCenterComponent,
-      },
-      {
-        path: 'registrar-cita-emergencia',
-        component: AddEmergencyReservationComponent,
-      },
-      {
-        path: 'citas-emergencia',
-        component: EmergencyReservationComponent,
       },
       {
         path: 'mis-consultorios',

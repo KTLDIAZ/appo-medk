@@ -6,8 +6,6 @@ import { RouterModule } from '@angular/router';
 import { MyReservationsComponent } from './my-reservations/my-reservations.component';
 import { HealthCentersComponent } from './health-centers/health-centers.component';
 import { AddHealthCenterComponent } from './add-health-center/add-health-center.component';
-import { AddEmergencyReservationComponent } from './add-emergency-reservation/add-emergency-reservation.component';
-import { EmergencyReservationComponent } from './emergency-reservation/emergency-reservation.component';
 import { MyOfficesComponent } from './my-offices/my-offices.component';
 import { MyAgendaComponent } from './my-agenda/my-agenda.component';
 import { AddOfficeComponent } from './add-office/add-office.component';
@@ -23,14 +21,11 @@ import { PagesRoutingModule } from './pages-routing.module';
     MyReservationsComponent,
     HealthCentersComponent,
     AddHealthCenterComponent,
-    AddEmergencyReservationComponent,
-    EmergencyReservationComponent,
     MyOfficesComponent,
     MyAgendaComponent,
     AddOfficeComponent,
     OfficesComponent,
-    AddReservationComponent
-    
+    AddReservationComponent,
   ],
   imports: [
     CommonModule,
@@ -38,7 +33,7 @@ import { PagesRoutingModule } from './pages-routing.module';
     MaterialModule,
     RouterModule,
     ComponentsModule,
-    FormsModule
-  ]
+    FormsModule,
+  ],
 })
-export class PagesModule { }
+export class PagesModule {}

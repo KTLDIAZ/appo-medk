@@ -21,6 +21,7 @@ export class AddReservationComponent implements OnInit {
   public idConsultorio: string = '';
   public idDoctor: string = '';
   public schedules: Schedule[] = [];
+  public tipo: string = 'normal';
 
   constructor(
     private fetchService: FetchService,
@@ -58,6 +59,7 @@ export class AddReservationComponent implements OnInit {
       idConsultorio: this.idConsultorio,
       ...schedule,
       idDoctor: this.idDoctor,
+      tipo: this.tipo,
     };
 
     this.createService.createReservation(data).subscribe((res) => {
