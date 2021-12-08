@@ -10,9 +10,17 @@
           El consultorio esta ubicado en {{ office.indicaciones }} y el numero
           de consultorio es {{ office.numeroConsultorio }}
         </p>
-        <a class="btn btn-warning" [routerLink]="['/consultorio', office._id]"
-          >Reservar cita</a
+        <a
+          class="btn btn-warning mb-2"
+          [routerLink]="['/consultorio', office._id]"
+          >Reservar cita
+        </a>
+        <button
+          class="btn btn-outline-danger"
+          (click)="deleteOffice(office._id)"
         >
+          Eliminar consultorio
+        </button>
       </div>
     </div>
   </div>
