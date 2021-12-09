@@ -16,6 +16,7 @@
           >Reservar cita
         </a>
         <button
+          *ngIf="isAdmin"
           class="btn btn-outline-danger"
           (click)="deleteOffice(office._id)"
         >
